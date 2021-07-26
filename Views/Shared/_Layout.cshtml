@@ -1,49 +1,71 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using portal.Constants
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - portal</title>
+    <title>@ViewData["Title"] - AdvPortal</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/fontawesome.min.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">portal</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial" />
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+<div id="header">
+@if (SignInManager.IsSignedIn(User)){
+    <a id="profile" href="/Identity/Account/Manage">
+    <img id="profile-image" src="~/assets/images/profile.png" alt="profile image">
+    </a>
+    <span id="user-name">@User.Identity.Name</span>
+}
+<div id="main-menu">
+@if (SignInManager.IsSignedIn(User))
+{
+    <a class="menu-link" href="/">Home</a>
+    <a class="menu-link" href="reports">Reports</a>
+    @if (User.IsInRole(Roles.SuperAdmin.ToString())){
+        <a class="menu-link" href="admin">admin</a>
+    }
+    <a class="menu-link" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Application", new { area = "" })">Logout</a>
+}else{
+    <a class="menu-link" asp-area="Identity" asp-page="/Account/Register">Register</a>
+    <a class="menu-link" asp-area="Identity" asp-page="/Account/Login">Login</a>
+}
+</div>
+<div id="search-bar" class="input-group mb-3">
+    <input id="search" type="text" class="form-control" placeholder="Search" aria-label="search" aria-describedby="basic-addon1">
+    <div class="input-group-append">
+    <span class="input-group-text search-icon"></span>
+</div>
+</div>
+<div class="colour-bar-container">
+    <div class="colour-bar colour-bar-1"></div>
+    <div class="colour-bar colour-bar-2"></div>
+    <div class="colour-bar colour-bar-3"></div>
+    <div class="colour-bar colour-bar-4"></div>
+</div>
+</div>
+<div id="wrapper">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+<div id="dock-container">
+    <div id="dock">
+    @if (SignInManager.IsSignedIn(User)){
+        <a href="https://outlook.office.com/mail/" class="icon" rel="noopener noreferrer" target="_blank"><img src="~/assets/icons/outlook.png"></a>
+        <a href="https://advtracker.uwaterloo.ca/" class="icon" rel="noopener noreferrer" target="_blank"><img src="~/assets/icons/rt.png"></a>
+        <a href="https://wiki.uwaterloo.ca/display/ADVPRORS" class="icon" rel="noopener noreferrer" target="_blank"><img src="~/assets/icons/wiki.png"></a>
+        <a href="https://uofwaterloo-my.sharepoint.com/personal/cdchambe_uwaterloo_ca/_layouts/15/onedrive.aspx" class="icon" rel="noopener noreferrer" target="_blank"><img src="~/assets/icons/onedrive.png"></a>
+        <a href="rdp:full address=s:adv60301&username=s:nexus.uwaterloo.ca\cdchambe" class="icon" rel="noopener noreferrer" target="_blank"><img src="~/assets/icons/rdp.png"></a>
+    }
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - portal - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@RenderSection("Scripts", required: false)
 </body>
 </html>
