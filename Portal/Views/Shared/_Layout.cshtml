@@ -24,7 +24,6 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <a class="menu-link" href="/">Home</a>
-    <a class="menu-link" href="reports">Reports</a>
     @if (User.IsInRole(Roles.SuperAdmin.ToString())){
         <a class="menu-link" href="admin">admin</a>
     }
@@ -56,10 +55,9 @@
     <div id="dock">
     @if (SignInManager.IsSignedIn(User)){
         <a href="https://outlook.office.com/mail/" class="icon" rel="noopener noreferrer" target="_blank"><img src="~/assets/icons/outlook.png"></a>
-        <a href="https://advtracker.uwaterloo.ca/" class="icon" rel="noopener noreferrer" target="_blank"><img src="~/assets/icons/rt.png"></a>
-        <a href="https://wiki.uwaterloo.ca/display/ADVPRORS" class="icon" rel="noopener noreferrer" target="_blank"><img src="~/assets/icons/wiki.png"></a>
-        <a href="https://uofwaterloo-my.sharepoint.com/personal/cdchambe_uwaterloo_ca/_layouts/15/onedrive.aspx" class="icon" rel="noopener noreferrer" target="_blank"><img src="~/assets/icons/onedrive.png"></a>
-        <a href="rdp:full address=s:adv60301&username=s:nexus.uwaterloo.ca\cdchambe" class="icon" rel="noopener noreferrer" target="_blank"><img src="~/assets/icons/rdp.png"></a>
+        <a href="https://onedrive.live.com" class="icon" rel="noopener noreferrer" target="_blank"><img src="~/assets/icons/onedrive.png"></a>
+        <a href="#" class="icon" rel="noopener noreferrer" target="_blank"><img src="~/assets/icons/sharepoint.png"></a>
+        <a href="#" class="icon" rel="noopener noreferrer" target="_blank"><img src="~/assets/icons/computer.png"></a>
     }
     </div>
 </div>
