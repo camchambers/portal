@@ -1,0 +1,16 @@
+@model IEnumerable<portal.Models.Application>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="content-container">
+    @foreach (var item in Model)
+    {
+        <a href="@Html.DisplayFor(modelItem => item.Link)" class="icon" rel="noopener noreferrer" target="_blank">
+            <img src="/assets/icons/@Html.DisplayFor(modelItem => item.Image)@(".png")" />
+            <span class="icon-label">@Html.DisplayFor(modelItem => item.Name)</span>
+        </a>
+    }
+</div>
+
