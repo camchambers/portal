@@ -10,17 +10,20 @@
 * Create roles and assign users to roles
 * Restrict access to site areas using role-based authorization
 
+## Requirements
+* .NET Core 5.0
+* [PostgreSQL](https://www.postgresql.org/download/)
+* [pgAdmin](https://www.pgadmin.org/download/) (optional)
+
 ## Install
-* Install PostgreSQL https://www.postgresql.org/download/
-* Optionally install pgAdmin https://www.pgadmin.org/download/
-* Import the database from the Database folder
+* Import the database from the /Database folder
 * Modify the database connection string in appsettings.json
 
 ## Configure
 * Specify a username and password for an admin account in /Portal/Seeds/DefaultUsers.cs
 * Login using the admin account
 * Create applications and users using the admin screen
-* Restrict access to site areas by modifying authorize attributes for site controllers under /Portal/Controllers/
+* Restrict access to site areas by modifying [authorize attributes](https://docs.microsoft.com/en-us/aspnet/core/security/authorization/simple?view=aspnetcore-5.0) for site controllers under /Portal/Controllers/
 
 ## Customize
 * Modify the site colour scheme and appearance in /Portal/wwwroot/css/site.css
