@@ -9,7 +9,7 @@
 * Import the database from the Database folder
 * Modify the database connection string in appsettings.json
 
-# Usage
+## Usage
 * Specify a username and password for an admin account in /portal/Portal/Seeds/DefaultUsers.cs
 * Login using the admin account
 * Create applications and users using the admin screen
