@@ -101,10 +101,13 @@ main {
 
 h1 {
     width: 100%;
-    margin-bottom: 1rem;
     background-color: #ebf2fa;
     text-align: center;
-    padding-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+h4{
+    margin-left: 4.5rem;
 }
 
 .icon {
