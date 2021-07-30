@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using adv_portal.Data;
-using adv_portal.Models;
+using portal.Data;
+using portal.Models;
 using Microsoft.AspNetCore.Authorization;
 
-namespace adv_portal.Controllers
+namespace portal.Controllers
 {
     public class AdminController : Controller
     {
