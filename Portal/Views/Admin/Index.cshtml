@@ -1,0 +1,25 @@
+﻿<h1>Admin</h1>
+
+
+@{ var adminLinks = new Application[]
+       {
+        new Application() { Name = "User Management", Link = "users" },
+        new Application() { Name = "Application Management", Link = "applications/admin" },
+        new Application() { Name = "Remote Desktop Utility", Link = "workstations/rdp" },
+        new Application() { Name = "Group Management", Link = "groups" },
+        new Application() { Name = "Asset Management", Link = "assets" },
+        new Application() { Name = "Asset Types", Link = "assettypes" },
+        new Application() { Name = "Workstations", Link = "assets/workstations" },
+        new Application() { Name = "RDP Utility", Link = "rdp" }
+       };
+}
+
+<div class="content-container">
+    @foreach (var adminLink in adminLinks)
+    {
+        <a href="@Html.DisplayFor(modelItem => adminLink.Link)" class="icon">
+            <img src="/assets/icons/default.png" />
+            <span class="icon-label">@Html.DisplayFor(modelItem => adminLink.Name)</span>
+        </a>
+    }
+</div>
