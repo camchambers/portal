@@ -15,6 +15,8 @@ namespace portal.Data
         {
         }
         public DbSet<Application> Application { get; set; }
+        public DbSet<Asset> Asset { get; set; }
+        public DbSet<AssetType> AssetType { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
