@@ -1,5 +1,5 @@
 # Portal
-> A .NET Core MVC portal using a PostgreSQL database.
+> A .NET Core MVC portal using a PostgreSQL database, Bootstrap, and Razor Pages.
 
 ![Home.png](/Screenshots/home.png?raw=true "Home Page")
 
