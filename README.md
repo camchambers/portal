@@ -8,7 +8,7 @@
 * Easily create, and manage apps using the app management screen
 * A fast and intuitive search (easily search for apps, people, and more)
 * Create roles and assign users to roles
-* Restrict access to site areas using role-based authorization
+* Restrict access to site areas using [role-based authorization](https://docs.microsoft.com/en-us/aspnet/core/security/authorization/roles?view=aspnetcore-5.0)
 
 ## Requirements
 * .NET Core 5.0
