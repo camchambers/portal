@@ -1,23 +1,17 @@
 # Portal
 > A .NET Core MVC portal using a PostgreSQL database, Bootstrap, and Razor Pages.
 
-
-
-![Home.png](./Screenshots/manage-applications.png?raw=true "Home Page")
-
-![Home.png](./Screenshots/create-application-mobile.png?raw=true "Home Page")
-
-
 ## Features
 
-### A homepage with apps (links) to frequently used sites and resources
-![Home.png](./Screenshots/home.png?raw=true "Home Page")
-
+* A homepage with apps (links) to frequently used sites and resources
 * Easily create, and manage apps using the app management screen
 * A fast and intuitive search (easily search for apps, people, and more)
 * Create roles and assign users to roles
 * Restrict access to site areas using [role-based authorization](https://docs.microsoft.com/en-us/aspnet/core/security/authorization/roles?view=aspnetcore-5.0)
 * Mobile friendly, responsive design
+
+![Home.png](./Screenshots/home.png?raw=true "Home Page")
+
 
 ## Requirements
 * [.NET 5.0](https://dotnet.microsoft.com/download/dotnet/5.0)
