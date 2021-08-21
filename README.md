@@ -7,7 +7,7 @@
 * Easily create, and manage apps using the app management screen
 * A fast and intuitive search (easily search for apps, people, and more)
 * Create roles and assign users to roles
-* Restrict access to site areas using [role-based authorization](https://docs.microsoft.com/en-us/aspnet/core/security/authorization/roles?view=aspnetcore-5.0)
+* Restrict access to pages using [role-based authorization](https://docs.microsoft.com/en-us/aspnet/core/security/authorization/roles?view=aspnetcore-5.0)
 * Mobile friendly, responsive design
 
 ![Home.png](./Screenshots/home.png?raw=true "Home Page")
@@ -30,7 +30,7 @@
 
 ## Customize
 * Modify the site colour scheme and appearance in /Portal/wwwroot/css/site.css
-* Modify the site template in Portal/Views/Shared/_Layout.cshtm
+* Modify the global site template in Portal/Views/Shared/_Layout.cshtm
 
 ## License
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
